@@ -8,23 +8,23 @@ angular.module('movieDetails', [])
         },
         'getFilms': {
           method: 'GET',
-          url: 'http://swapi.co/api/films/'
+          url: 'http://swapi.co/api/films/:idFilme'
         },
         'getSpecies': {
           method: 'GET',
-          url: 'http://swapi.co/api/species/'
+          url: 'http://swapi.co/api/species/:id'
         },
         'getPlanets': {
           method: 'GET',
-          url: 'http://swapi.co/api/planets/'
+          url: 'http://swapi.co/api/planets/:id'
         },
         'getStarships': {
           method: 'GET',
-          url: 'http://swapi.co/api/starships/'
+          url: 'http://swapi.co/api/starships/:id'
         },
         'getVehicles': {
           method: 'GET',
-          url: 'http://swapi.co/api/vehicles/'
+          url: 'http://swapi.co/api/vehicles/:id'
         }
       }),
       service = {
@@ -32,7 +32,7 @@ angular.module('movieDetails', [])
           return resource.getPessoas(pessoa);
         },
         getFilms: function (filme) {
-          return resource.getFilms(filme);
+          return resource.getFilms({idFilme: filme});
         },
         getSpecies: function (species) {
           return resource.getSpecies(species);
